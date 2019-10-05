@@ -15,7 +15,7 @@ window = pygame.display.set_mode((window_side, window_side))
 pygame.display.set_caption("Macgyver Reloaded")
 
 main_loop = 1
-macgyver = Character('images/ MacGyver.png')
+macgyver = Character('images/MacGyver.png')
 
 #main loop
 while  main_loop:  
