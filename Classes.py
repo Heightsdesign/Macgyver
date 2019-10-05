@@ -29,10 +29,10 @@ class Level:
             self.structure = level_structure
 
     def showscreen(self, window):
-        floor =  pygame.image.load('tilefloor.png').convert()
-        wall = pygame.image.load('tilewall.png').convert()
-        start = pygame.image.load('tilestart.png').convert()
-        finish = pygame.image.load('tilestart.png').convert()
+        floor =  pygame.image.load('images/tilefloor.png').convert()
+        wall = pygame.image.load('images/tilewall.png').convert()
+        start = pygame.image.load('images/tilestart.png').convert()
+        finish = pygame.image.load('images/tilestart.png').convert()
 
         num_line = 0
         for line in self.structure:
