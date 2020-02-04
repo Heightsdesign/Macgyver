@@ -1,0 +1,88 @@
+# coding utf-8
+
+import pygame
+import random
+from pygame.locals import *
+from constants import *
+from Classes import *
+
+#initialize pygame
+pygame.init()
+
+#create a window 300 x 300 pixels
+window = pygame.display.set_mode((window_side, window_side))
+
+pygame.display.set_caption("Macgyver Reloaded")
+
+main_loop = 1
+macgyver = Character('images/ MacGyver.png')
+murdoc = Villain('images/Gardien.png')
+chest = Item('images/chest.png')
+poison  = Item('images/poison.png')
+coins = Item('images/Coins.png')
+tablet = Item('images/Tablet.png')
+champ = pygame.image.load('images/cheers/cheers.GIF')
+chest.randpos()
+poison.randpos()
+coins.randpos()
+tablet.randpos()
+
+
+#main loop
+while  main_loop:  
+    #if the player presses escape button or clicks on quit the game closes
+    for event in pygame.event.get():
+        if event.type == QUIT or  event.type == KEYDOWN and event.key == K_ESCAPE:
+            main_loop = 0
+            
+     #structure file       
+    labstruc = 'labstruc.txt'
+
+    #creates the level from the file
+    level = Level(labstruc)
+    level.generate()
+    level.showscreen(window)
+    
+    chest.nowall(level)
+    poison.nowall(level)
+    coins.nowall(level)
+    tablet.nowall(level)
+
+    for event in pygame.event.get():
+
+        
+                
+         # if player presses a following key 
+        if event.type == KEYDOWN:
+             #if player presses the right key character moves right
+            if event.key == K_RIGHT:
+                macgyver.move('right', level)
+            if event.key == K_LEFT:
+                macgyver.move('left', level)
+            if event.key == K_UP:
+                macgyver.move('up', level)
+            if event.key == K_DOWN:
+                macgyver.move('down', level)
+
+            chest.Getitems(macgyver)
+            poison.Getitems(macgyver)
+            coins.Getitems(macgyver)
+            tablet.Getitems(macgyver)
+            
+            murdoc.Shallnotpass(macgyver)
+                
+   #show on the screen
+    window.blit(macgyver.character, (macgyver.x, macgyver.y))
+    window.blit(murdoc.villain, (murdoc.x, murdoc.y))
+    window.blit(chest.image,(chest.x, chest.y))
+    window.blit(poison.poison,(poison.x, poison.y))
+    window.blit(coins.coins,(coins.x, coins.y))
+    window.blit(tablet.tablet,(tablet.x, tablet.y))
+
+    if murdoc.x == 320:
+        window.blit(champ, (41, 75))
+    
+    
+    pygame.display.flip()
+    
+pygame.quit()
