@@ -1,4 +1,5 @@
-"""Classes for the MacGyver game"""
+
+"""Level for the MacGyver game"""
 
 # coding utf-8
 # import needed modules

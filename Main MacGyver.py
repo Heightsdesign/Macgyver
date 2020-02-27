@@ -9,6 +9,7 @@ from Items import *
 from Characters import *
 
 
+
 # initialize pygame
 pygame.init()
 
@@ -71,7 +72,6 @@ while  main_loop:
                 macgyver.move('up', level)
             if event.key == K_DOWN:
                 macgyver.move('down', level)
-
 
             # verifying if the objects have been collected
             chest.Getitems(macgyver)
