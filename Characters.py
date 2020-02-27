@@ -4,7 +4,7 @@
 # imports needed modules
 import pygame
 from pygame.locals import *
-from constants import *
+import constants
 from Classes import *
 
 
@@ -85,7 +85,7 @@ class Villain:
         # checking if the player's  position is equal to the villain's
         if self.x == player.x and self.y == player.y:
             # checking if the player has collected all the items
-            if item_count < 4:
+            if constants.item_count < 4:
                 # if not the player will not pass
                 player.y -= 20
                 print('You shall not pass me ! You sorry SOB !')

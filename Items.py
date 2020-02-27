@@ -4,7 +4,7 @@
 #imports needed modules
 import pygame
 from pygame.locals import *
-from constants import *
+import constants
 from Classes import *
 
 
@@ -53,15 +53,14 @@ class Item:
 
         self.player = player
         # using the item_count variable as global
-        global item_count
 
         #  checking if player's y position is equal to the item's position
         if self.y == player.y:
             #  if the player's x position is equal to the item's position
             if self.x == player.x:
                 # add 1 to item_count
-                item_count += 1
-                print("you have {} item(s)". format(item_count))
+                constants.item_count += 1
+                print("you have {} item(s)". format(constants.item_count))
                 # remove item from the game / set off screen
                 self.x = 320
                 self.y = 320
