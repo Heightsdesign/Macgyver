@@ -18,7 +18,7 @@ LAUNCHING:
 This game was written in Python using the module Random from the default Python library and the Pygame module.
 
 You can download and install Python here : https://www.python.org/downloads/
-You can download and install Pygame here : https://www.pygame.org/download.shtml
+You can download and install Virtualenv here : https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
 If need be, you can activate a virtual environment by going to the program folder in your terminal and 
 running the commands : 
