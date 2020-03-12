@@ -23,7 +23,13 @@ You can download and install Pygame here : https://www.pygame.org/download.shtml
 If need be, you can activate a virtual environment by going to the program folder in your terminal and 
 running the commands : 
 
->>>> virtualenv -p py env
+> virtualenv -p py env
 
->>>> env\Scripts\activate
+> env\Scripts\activate
+
+Install all required modules by running the command : 
+
+> pip install -r requirements.txt
+
+Run main_macgyver.py file to play ! Enjoy ! 
 
