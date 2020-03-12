@@ -29,7 +29,7 @@ running the commands :
 
 Install all required modules by running the command : 
 
-> pip install -r requirements.txt
+> pip install -r Requirements.txt
 
 Run main_macgyver.py file to play ! Enjoy ! 
 
